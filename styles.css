@@ -97,23 +97,31 @@ body::before {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: var(--paper);
   text-decoration: none;
-  font-family: Impact, "Arial Black", sans-serif;
-  letter-spacing: 2px;
-  font-size: 1.1rem;
+  font: 800 .73rem/1 "Courier New", monospace;
+  letter-spacing: 1.4px;
+  padding: 10px 14px;
+  border: 2px solid rgba(255, 250, 240, .4);
+  background: rgba(15, 25, 17, .68);
+  backdrop-filter: blur(9px);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  color: var(--cream);
-  background: var(--green-dark);
-  border: 4px solid var(--ink);
-  box-shadow: inset -5px -5px 0 rgba(0, 0, 0, .2), 4px 4px 0 var(--gold);
+.brand:hover,
+.brand:focus-visible {
+  transform: translateY(-2px);
+  background: #5865f2;
+  box-shadow: 3px 3px 0 var(--gold);
+  outline: none;
+}
+
+.discord-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex: 0 0 auto;
 }
 
 .copy-ip {
