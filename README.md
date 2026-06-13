@@ -6,7 +6,7 @@ A static application center and landing page for the Loomwood Minecraft server, 
 
 1. Open `script.js`.
 2. Replace each `"#"` in `destinations` with your Staff Application, Media Application, and voting URLs.
-3. In `index.html`, replace `play.loomwood.net` with the server's real IP address.
+3. The server address shown in the header is `play.loomwood.org`.
 
 ## Publish on GitHub Pages
 
