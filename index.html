@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join the Loomwood Minecraft community, apply for the team, or vote for the server.">
+  <title>Loomwood | Minecraft Server</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span class="cloud cloud-one"></span>
+    <span class="cloud cloud-two"></span>
+    <span class="cloud cloud-three"></span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Loomwood home">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>LOOMWOOD</span>
+    </a>
+    <button class="copy-ip" type="button" data-server-ip="play.loomwood.net">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="copy-label">PLAY.LOOMWOOD.NET</span>
+      <span class="copy-hint">COPY IP</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow"><span></span> A MINECRAFT COMMUNITY <span></span></p>
+      <h1>FIND YOUR PLACE<br><em>IN LOOMWOOD</em></h1>
+      <p class="intro">
+        Help shape our world. Join the team, share your creativity,
+        or support the server with your vote.
+      </p>
+      <a class="scroll-cue" href="#choose">CHOOSE YOUR PATH <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="paths" id="choose" aria-labelledby="paths-title">
+      <div class="section-heading">
+        <p>THREE WAYS TO GET INVOLVED</p>
+        <h2 id="paths-title">What brings you here?</h2>
+      </div>
+
+      <div class="card-grid">
+        <a class="path-card staff" href="#" data-destination="staff" style="--delay: 0s">
+          <span class="card-number">01</span>
+          <span class="pixel-icon icon-shield" aria-hidden="true"></span>
+          <span class="card-type">LEAD THE COMMUNITY</span>
+          <strong>Staff<br>Application</strong>
+          <span class="card-description">Help players, build events, and keep Loomwood welcoming.</span>
+          <span class="card-action">APPLY NOW <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="path-card media" href="#" data-destination="media" style="--delay: .1s">
+          <span class="card-number">02</span>
+          <span class="pixel-icon icon-camera" aria-hidden="true"></span>
+          <span class="card-type">CREATE &amp; SHARE</span>
+          <strong>Media<br>Application</strong>
+          <span class="card-description">Turn great moments into videos, streams, and stories.</span>
+          <span class="card-action">APPLY NOW <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="path-card vote" href="#" data-destination="vote" style="--delay: .2s">
+          <span class="card-number">03</span>
+          <span class="pixel-icon icon-gem" aria-hidden="true"></span>
+          <span class="card-type">SUPPORT THE SERVER</span>
+          <strong>Vote for<br>Loomwood</strong>
+          <span class="card-description">Boost the server, help us grow, and earn in-game rewards.</span>
+          <span class="card-action">VOTE NOW <b aria-hidden="true">→</b></span>
+        </a>
+
+        <a class="path-card store" href="https://store.loomwood.org" target="_blank" rel="noopener noreferrer" style="--delay: .3s">
+          <span class="card-number">04</span>
+          <span class="pixel-icon icon-chest" aria-hidden="true"></span>
+          <span class="card-type">VISIT THE SHOP</span>
+          <strong>Loomwood<br>Store</strong>
+          <span class="card-description">Browse ranks, bundles, and extras that support Loomwood.</span>
+          <span class="card-action">SHOP NOW <b aria-hidden="true">→</b></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> LOOMWOOD</span>
+    <span class="footer-motto">BUILD TOGETHER. GROW TOGETHER.</span>
+  </footer>
+
+  <dialog class="link-dialog">
+    <button class="dialog-close" type="button" aria-label="Close">×</button>
+    <p class="dialog-kicker">ALMOST READY</p>
+    <h2>Add your link</h2>
+    <p>This destination has not been connected yet. Update it in <code>script.js</code> before publishing.</p>
+    <button class="dialog-button" type="button">GOT IT</button>
+  </dialog>
+</body>
+</html>
