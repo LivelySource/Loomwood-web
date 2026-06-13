@@ -1,4 +1,5 @@
-// Set this after deploying the secure relay in worker/.
+// Deploy the worker in worker/ to Cloudflare and replace with your deployed URL
+// Format: https://<worker-name>.<your-username>.workers.dev
 const APPLICATION_API_URL = "https://YOUR-WORKER.workers.dev";
 
 const applicationForm = document.querySelector(".application-form");
