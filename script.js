@@ -50,3 +50,48 @@ copyButton.addEventListener("click", async () => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const sceneImage = document.querySelector(".scene-image");
+const particleField = document.querySelector(".particles");
+
+function createParticles() {
+  if (reducedMotion.matches) return;
+
+  const fragment = document.createDocumentFragment();
+
+  for (let index = 0; index < 28; index += 1) {
+    const particle = document.createElement("span");
+    const size = 2 + Math.random() * 4;
+
+    particle.className = "particle";
+    particle.style.setProperty("--x", `${Math.random() * 100}%`);
+    particle.style.setProperty("--size", `${size}px`);
+    particle.style.setProperty("--duration", `${12 + Math.random() * 15}s`);
+    particle.style.setProperty("--delay", `${Math.random() * -24}s`);
+    particle.style.setProperty("--drift", `${-80 + Math.random() * 160}px`);
+    particle.style.setProperty("--opacity", `${0.25 + Math.random() * 0.55}`);
+    fragment.appendChild(particle);
+  }
+
+  particleField.appendChild(fragment);
+}
+
+let scrollFrame;
+
+function updateScene() {
+  scrollFrame = undefined;
+  const scrollProgress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1.5);
+  const blur = Math.min(scrollProgress * 2.4, 3.5);
+  const shift = Math.min(window.scrollY * -0.035, 0);
+
+  sceneImage.style.setProperty("--scene-blur", `${blur.toFixed(2)}px`);
+  sceneImage.style.setProperty("--scene-shift", `${shift.toFixed(2)}px`);
+}
+
+window.addEventListener("scroll", () => {
+  if (reducedMotion.matches || scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(updateScene);
+}, { passive: true });
+
+createParticles();

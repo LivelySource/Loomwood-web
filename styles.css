@@ -20,7 +20,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--cream);
+  background: #152117;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
@@ -30,47 +30,59 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
-  opacity: .22;
+  z-index: -1;
+  opacity: .12;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(26, 40, 28, .07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 40, 28, .07) 1px, transparent 1px);
+    linear-gradient(rgba(255, 244, 210, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 244, 210, .07) 1px, transparent 1px);
   background-size: 5px 5px;
 }
 
-.sky {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 650px;
-  z-index: -1;
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, #a8d8d9 0%, #d9e6d0 66%, var(--cream) 100%);
+  pointer-events: none;
+  background: #172116;
 }
 
-.sky::after {
-  content: "";
+.scene-image {
   position: absolute;
-  inset: auto 0 0;
-  height: 160px;
-  opacity: .28;
-  background:
-    linear-gradient(135deg, transparent 15%, #688f60 15% 25%, transparent 25%) 0 50px / 220px 130px repeat-x,
-    linear-gradient(45deg, transparent 35%, #3f6b42 35% 55%, transparent 55%) 30px 60px / 160px 100px repeat-x;
+  inset: -5%;
+  background: url("assets/loomwood-background.png") center center / cover no-repeat;
+  transform: translate3d(0, var(--scene-shift, 0px), 0) scale(1.05);
+  filter: blur(var(--scene-blur, 0px));
+  will-change: transform, filter;
 }
 
-.cloud {
+.scene-shade {
   position: absolute;
-  width: 120px;
-  height: 24px;
-  background: rgba(255, 255, 255, .54);
-  box-shadow: 28px -18px 0 rgba(255, 255, 255, .54), 56px 0 0 rgba(255, 255, 255, .54);
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(9, 14, 9, .34) 0%, rgba(9, 14, 9, .08) 35%, rgba(9, 14, 9, .46) 75%, rgba(9, 14, 9, .76) 100%),
+    radial-gradient(circle at center 28%, transparent 20%, rgba(10, 17, 11, .28) 100%);
 }
 
-.cloud-one { top: 155px; left: 7%; }
-.cloud-two { top: 95px; right: 13%; transform: scale(.75); }
-.cloud-three { top: 310px; right: 4%; transform: scale(.48); }
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  left: var(--x);
+  bottom: -20px;
+  width: var(--size);
+  height: var(--size);
+  opacity: 0;
+  border-radius: 50%;
+  background: #ffd784;
+  box-shadow: 0 0 8px 2px rgba(255, 188, 77, .55);
+  animation: particle-drift var(--duration) linear var(--delay) infinite;
+}
 
 .site-header {
   width: min(1180px, calc(100% - 40px));
@@ -79,13 +91,14 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--paper);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--ink);
+  color: var(--paper);
   text-decoration: none;
   font-family: Impact, "Arial Black", sans-serif;
   letter-spacing: 2px;
@@ -107,20 +120,22 @@ body::before {
   display: flex;
   align-items: center;
   gap: 9px;
-  border: 2px solid rgba(21, 33, 23, .28);
+  border: 2px solid rgba(255, 250, 240, .4);
   padding: 10px 13px;
-  background: rgba(255, 250, 240, .62);
-  color: var(--ink);
+  background: rgba(15, 25, 17, .68);
+  color: var(--paper);
   cursor: pointer;
   font: 700 .72rem/1 "Courier New", monospace;
   letter-spacing: .5px;
   transition: .2s ease;
+  backdrop-filter: blur(9px);
 }
 
 .copy-ip:hover {
   transform: translateY(-2px);
+  color: var(--ink);
   background: var(--paper);
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 3px 3px 0 var(--gold);
 }
 
 .status-dot {
@@ -141,6 +156,8 @@ body::before {
   min-height: 500px;
   padding: 80px 20px 110px;
   text-align: center;
+  color: var(--paper);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, .8);
 }
 
 .eyebrow,
@@ -157,13 +174,13 @@ body::before {
   align-items: center;
   gap: 14px;
   margin: 0 0 22px;
-  color: var(--green-dark);
+  color: #ffe1a0;
 }
 
 .eyebrow span {
   width: 28px;
   height: 2px;
-  background: var(--green-dark);
+  background: #ffe1a0;
 }
 
 h1 {
@@ -205,6 +222,10 @@ h1 em {
 .intro {
   width: min(590px, 100%);
   margin: 20px auto 33px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  background: rgba(12, 21, 14, .42);
+  backdrop-filter: blur(5px);
   font: 500 1.08rem/1.7 Georgia, serif;
 }
 
@@ -212,7 +233,7 @@ h1 em {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--ink);
+  color: var(--paper);
   font: 800 .67rem/1 "Courier New", monospace;
   letter-spacing: 2px;
   text-decoration: none;
@@ -225,8 +246,12 @@ h1 em {
 
 .paths {
   width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 74px 0 100px;
+  margin: 0 auto 80px;
+  padding: 58px 42px 70px;
+  border: 1px solid rgba(255, 250, 240, .28);
+  background: rgba(238, 231, 208, .88);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .36);
+  backdrop-filter: blur(14px);
 }
 
 .section-heading {
@@ -413,7 +438,8 @@ footer {
   justify-content: space-between;
   gap: 20px;
   color: var(--cream);
-  background: var(--ink);
+  background: rgba(10, 17, 11, .88);
+  backdrop-filter: blur(10px);
   font: 700 .65rem/1.4 "Courier New", monospace;
   letter-spacing: 1px;
 }
@@ -491,6 +517,23 @@ footer {
   }
 }
 
+@keyframes particle-drift {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    opacity: var(--opacity);
+  }
+  85% {
+    opacity: calc(var(--opacity) * .75);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift), -110vh, 0);
+  }
+}
+
 @media (max-width: 820px) {
   .card-grid {
     grid-template-columns: 1fr;
@@ -532,6 +575,7 @@ footer {
 
   .paths {
     width: calc(100% - 28px);
+    padding: 42px 20px 54px;
   }
 
   .path-card {
@@ -549,5 +593,14 @@ footer {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
+  }
+
+  .scene-image {
+    transform: scale(1.05);
+    filter: none;
+  }
+
+  .particles {
+    display: none;
   }
 }
