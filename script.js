@@ -1,12 +1,11 @@
-// Replace each "#" with the public URL for that form or voting page.
 const destinations = {
-  staff: "#",
-  media: "#",
+  staff: "staff-applications/",
+  media: "media-applications/",
   vote: "#"
 };
 
 const dialog = document.querySelector(".link-dialog");
-const closeButtons = dialog.querySelectorAll(".dialog-close, .dialog-button");
+const closeButtons = dialog?.querySelectorAll(".dialog-close, .dialog-button") ?? [];
 
 document.querySelectorAll("[data-destination]").forEach((card) => {
   const destination = destinations[card.dataset.destination];
@@ -20,7 +19,7 @@ document.querySelectorAll("[data-destination]").forEach((card) => {
 
   card.addEventListener("click", (event) => {
     event.preventDefault();
-    dialog.showModal();
+    dialog?.showModal();
   });
 });
 
@@ -28,12 +27,12 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => dialog.close());
 });
 
-dialog.addEventListener("click", (event) => {
+dialog?.addEventListener("click", (event) => {
   if (event.target === dialog) dialog.close();
 });
 
 const copyButton = document.querySelector(".copy-ip");
-copyButton.addEventListener("click", async () => {
+copyButton?.addEventListener("click", async () => {
   const serverIp = copyButton.dataset.serverIp;
   const label = copyButton.querySelector(".copy-label");
 
@@ -49,14 +48,15 @@ copyButton.addEventListener("click", async () => {
   }, 1800);
 });
 
-document.querySelector("#year").textContent = new Date().getFullYear();
+const year = document.querySelector("#year");
+if (year) year.textContent = new Date().getFullYear();
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const sceneImage = document.querySelector(".scene-image");
 const particleField = document.querySelector(".particles");
 
 function createParticles() {
-  if (reducedMotion.matches) return;
+  if (reducedMotion.matches || !particleField) return;
 
   const fragment = document.createDocumentFragment();
 
@@ -80,6 +80,7 @@ function createParticles() {
 let scrollFrame;
 
 function updateScene() {
+  if (!sceneImage) return;
   scrollFrame = undefined;
   const scrollProgress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1.5);
   const blur = Math.min(scrollProgress * 2.4, 3.5);

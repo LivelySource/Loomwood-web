@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apply to join the Loomwood Minecraft server staff team.">
+  <title>Staff Application | Loomwood</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../application.css">
+  <script src="../script.js" defer></script>
+  <script src="../application.js" defer></script>
+</head>
+<body class="application-page">
+  <div class="scene" aria-hidden="true">
+    <div class="scene-image"></div>
+    <div class="scene-shade"></div>
+    <div class="particles"></div>
+  </div>
+
+  <header class="site-header application-header">
+    <a class="home-link" href="../"><span aria-hidden="true">&larr;</span> BACK TO PORTAL</a>
+    <button class="copy-ip" type="button" data-server-ip="play.loomwood.org">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="copy-label">PLAY.LOOMWOOD.ORG</span>
+      <span class="copy-hint">COPY IP</span>
+    </button>
+  </header>
+
+  <main class="application-main">
+    <section class="application-hero">
+      <img class="application-logo" src="../assets/loomwood-logo.png" alt="Loomwood: Build. Grow. Belong." width="500" height="209">
+      <p class="application-kicker">HELP LEAD THE COMMUNITY</p>
+      <h1>Staff Application</h1>
+      <p class="application-intro">Take your time and answer honestly. Thoughtful, detailed responses help us understand how you would support Loomwood and its players.</p>
+    </section>
+
+    <form class="application-form" data-application-type="staff">
+      <div class="honeypot" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <section class="form-section">
+        <h2>About You</h2>
+        <p class="section-note">Start with your basic information and availability.</p>
+
+        <div class="field">
+          <label class="required" for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" required data-question="Username">
+        </div>
+        <div class="field">
+          <label class="required" for="discord">Discord</label>
+          <input id="discord" name="discord" type="text" required data-question="Discord">
+        </div>
+        <div class="field">
+          <label class="required" for="age">Age</label>
+          <input id="age" name="age" type="number" min="13" max="99" required data-question="Age">
+        </div>
+        <div class="field">
+          <label class="required" for="timezone">Timezone</label>
+          <input id="timezone" name="timezone" type="text" placeholder="Example: PST / UTC-8" required data-question="Timezone">
+        </div>
+        <div class="field">
+          <label class="required" for="minecraft-duration">How long have you been playing Minecraft?</label>
+          <input id="minecraft-duration" name="minecraftDuration" type="text" required data-question="How long have you been playing Minecraft?">
+        </div>
+        <div class="field">
+          <label class="required" for="prior-staff">Have you been staff on other servers before?</label>
+          <textarea class="short-answer" id="prior-staff" name="priorStaff" required data-question="Have you been staff on other servers before?"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Availability</h2>
+        <p class="section-note">Give us a realistic picture of the time you can contribute.</p>
+
+        <div class="field">
+          <label class="required" for="hours">How many hours per week can you dedicate to Loomwood?</label>
+          <input id="hours" name="hoursPerWeek" type="text" required data-question="How many hours per week can you dedicate to Loomwood?">
+        </div>
+        <div class="field">
+          <label class="required" for="days">What days are you typically available?</label>
+          <input id="days" name="availableDays" type="text" required data-question="What days are you typically available?">
+        </div>
+        <div class="field">
+          <label class="required" for="inactive-periods">Are there any periods where you may be inactive?</label>
+          <textarea class="short-answer" id="inactive-periods" name="inactivePeriods" required data-question="Are there any periods where you may be inactive?"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Experience</h2>
+        <p class="section-note">Tell us about your moderation background and technical familiarity.</p>
+
+        <div class="field">
+          <label class="required" for="staff-experience">What previous staff experience do you have? And what position did you hold?</label>
+          <textarea id="staff-experience" name="staffExperience" required data-question="What previous staff experience do you have, and what position did you hold?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="plugins">What plugins or systems are you familiar with? (LiteBans, LuckPerms, etc.)</label>
+          <textarea id="plugins" name="plugins" required data-question="What plugins or systems are you familiar with?"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Scenarios</h2>
+        <p class="section-note">Explain your reasoning, not only the action you would take.</p>
+
+        <div class="field">
+          <label class="required" for="scenario-spam">A player is spamming chat and insulting other players. What would you do?</label>
+          <textarea id="scenario-spam" name="scenarioSpam" required data-question="A player is spamming chat and insulting other players. What would you do?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="scenario-ban">A player claims they were falsely banned and becomes angry in Discord. How would you handle the situation?</label>
+          <textarea id="scenario-ban" name="scenarioBan" required data-question="A player claims they were falsely banned and becomes angry in Discord. How would you handle the situation?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="scenario-hacker">A player reports a hacker, but you aren't certain they are cheating. How do you proceed?</label>
+          <textarea id="scenario-hacker" name="scenarioHacker" required data-question="A player reports a hacker, but you aren't certain they are cheating. How do you proceed?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="scenario-friend">You discover a friend breaking server rules. What do you do?</label>
+          <textarea id="scenario-friend" name="scenarioFriend" required data-question="You discover a friend breaking server rules. What do you do?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="scenario-staff">Another staff member is abusing their permissions. What would you do?</label>
+          <textarea id="scenario-staff" name="scenarioStaff" required data-question="Another staff member is abusing their permissions. What would you do?"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Final Response</h2>
+        <p class="section-note">This is your opportunity to tell us what sets you apart.</p>
+
+        <div class="field">
+          <label class="required" for="why-you">Finally, why do you want to join the Loomwood staff team and why should we choose you over the other applicants?</label>
+          <textarea class="long-answer" id="why-you" name="whyYou" required data-question="Why do you want to join the Loomwood staff team, and why should we choose you?"></textarea>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button class="submit-button" type="submit">SUBMIT APPLICATION</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="year"></span> LOOMWOOD</span>
+    <span class="footer-motto">BUILD TOGETHER. GROW TOGETHER.</span>
+  </footer>
+</body>
+</html>

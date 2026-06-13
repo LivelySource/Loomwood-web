@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apply to become a Loomwood Minecraft server media partner.">
+  <title>Media Application | Loomwood</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../application.css">
+  <script src="../script.js" defer></script>
+  <script src="../application.js" defer></script>
+</head>
+<body class="application-page">
+  <div class="scene" aria-hidden="true">
+    <div class="scene-image"></div>
+    <div class="scene-shade"></div>
+    <div class="particles"></div>
+  </div>
+
+  <header class="site-header application-header">
+    <a class="home-link" href="../"><span aria-hidden="true">&larr;</span> BACK TO PORTAL</a>
+    <button class="copy-ip" type="button" data-server-ip="play.loomwood.org">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="copy-label">PLAY.LOOMWOOD.ORG</span>
+      <span class="copy-hint">COPY IP</span>
+    </button>
+  </header>
+
+  <main class="application-main">
+    <section class="application-hero">
+      <img class="application-logo" src="../assets/loomwood-logo.png" alt="Loomwood: Build. Grow. Belong." width="500" height="209">
+      <p class="application-kicker">CREATE WITH LOOMWOOD</p>
+      <h1>Media Application</h1>
+      <p class="application-intro">Tell us about your content, audience, and ideas for a partnership. Links should be public and accessible to the Loomwood team.</p>
+    </section>
+
+    <form class="application-form" data-application-type="media">
+      <div class="honeypot" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <section class="form-section">
+        <h2>About You</h2>
+        <p class="section-note">Your creator identity and primary platforms.</p>
+
+        <div class="field">
+          <label class="required" for="creator-name">What is your creator name/username?</label>
+          <input id="creator-name" name="creatorName" type="text" required data-question="What is your creator name/username?">
+        </div>
+        <div class="field">
+          <label class="required" for="discord">What is your Discord username?</label>
+          <input id="discord" name="discord" type="text" required data-question="What is your Discord username?">
+        </div>
+        <div class="field">
+          <label class="required" for="age">How old are you?</label>
+          <input id="age" name="age" type="number" min="13" max="99" required data-question="How old are you?">
+        </div>
+        <div class="field">
+          <label class="required" for="location">What country/time zone are you located in?</label>
+          <input id="location" name="location" type="text" required data-question="What country/time zone are you located in?">
+        </div>
+        <fieldset class="field" data-required-group>
+          <legend class="required">What platforms do you create content on?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="platforms" value="YouTube" data-question="What platforms do you create content on?"><span>YouTube</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Twitch" data-question="What platforms do you create content on?"><span>Twitch</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Kick" data-question="What platforms do you create content on?"><span>Kick</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="TikTok" data-question="What platforms do you create content on?"><span>TikTok</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Instagram" data-question="What platforms do you create content on?"><span>Instagram</span></label>
+            <label class="choice"><input type="checkbox" name="platforms" value="Other" data-question="What platforms do you create content on?"><span>Other</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label class="required" for="platform-links">Please provide links to all of your content platforms.</label>
+          <textarea id="platform-links" name="platformLinks" required data-question="Links to all content platforms"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Content Information</h2>
+        <p class="section-note">Share what you make and the audience you currently reach.</p>
+
+        <fieldset class="field" data-required-group>
+          <legend class="required">What type of content do you primarily create?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="checkbox" name="contentTypes" value="Minecraft SMP" data-question="What type of content do you primarily create?"><span>Minecraft SMP</span></label>
+            <label class="choice"><input type="checkbox" name="contentTypes" value="Skyblock" data-question="What type of content do you primarily create?"><span>Skyblock</span></label>
+            <label class="choice"><input type="checkbox" name="contentTypes" value="PvP" data-question="What type of content do you primarily create?"><span>PvP</span></label>
+            <label class="choice"><input type="checkbox" name="contentTypes" value="Streaming" data-question="What type of content do you primarily create?"><span>Streaming</span></label>
+            <label class="choice"><input type="checkbox" name="contentTypes" value="Shorts/TikToks" data-question="What type of content do you primarily create?"><span>Shorts/TikToks</span></label>
+            <label class="choice"><input type="checkbox" name="contentTypes" value="Tutorials" data-question="What type of content do you primarily create?"><span>Tutorials</span></label>
+            <label class="choice"><input type="checkbox" name="contentTypes" value="Other" data-question="What type of content do you primarily create?"><span>Other</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label class="required" for="creator-duration">How long have you been creating content?</label>
+          <input id="creator-duration" name="creatorDuration" type="text" required data-question="How long have you been creating content?">
+        </div>
+        <div class="field">
+          <label class="required" for="frequency">How often do you upload or stream?</label>
+          <select id="frequency" name="frequency" required data-question="How often do you upload or stream?">
+            <option value="">Select one</option>
+            <option>Daily</option>
+            <option>Several times per week</option>
+            <option>Weekly</option>
+            <option>Biweekly</option>
+            <option>Monthly</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="youtube-views">What is your average YouTube views per video?</label>
+          <input id="youtube-views" name="youtubeViews" type="text" data-question="Average YouTube views per video">
+        </div>
+        <div class="field">
+          <label for="live-viewers">What is your average Twitch/Kick live viewers?</label>
+          <input id="live-viewers" name="liveViewers" type="text" data-question="Average Twitch/Kick live viewers">
+        </div>
+        <div class="field">
+          <label for="tiktok-views">What is your average TikTok views per post?</label>
+          <input id="tiktok-views" name="tiktokViews" type="text" data-question="Average TikTok views per post">
+        </div>
+        <div class="field">
+          <label class="required" for="followers">What is your current subscriber/follower count on each platform?</label>
+          <textarea class="short-answer" id="followers" name="followers" required data-question="Current subscriber/follower count on each platform"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="examples">Please link 3 examples of your best content.</label>
+          <textarea id="examples" name="examples" required data-question="Three examples of your best content"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Minecraft Experience</h2>
+        <p class="section-note">Tell us about your history with Minecraft communities.</p>
+
+        <div class="field">
+          <label class="required" for="minecraft-duration">How long have you been playing Minecraft?</label>
+          <input id="minecraft-duration" name="minecraftDuration" type="text" required data-question="How long have you been playing Minecraft?">
+        </div>
+        <div class="field">
+          <label class="required" for="server-types">What types of Minecraft servers have you previously created content on?</label>
+          <textarea id="server-types" name="serverTypes" required data-question="What types of Minecraft servers have you previously created content on?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="past-partnerships">Have you ever been a content creator or media partner for another Minecraft community? If yes, please explain.</label>
+          <textarea id="past-partnerships" name="pastPartnerships" required data-question="Have you been a creator or media partner for another Minecraft community?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="loomwood-interest">What interests you most about Loomwood?</label>
+          <textarea id="loomwood-interest" name="loomwoodInterest" required data-question="What interests you most about Loomwood?"></textarea>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Partnership Expectations</h2>
+        <p class="section-note">Describe how you see a partnership working in practice.</p>
+
+        <div class="field">
+          <label class="required" for="goals">What would you like to achieve through a partnership with Loomwood?</label>
+          <textarea id="goals" name="goals" required data-question="What would you like to achieve through a partnership with Loomwood?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="promotion-plan">How do you plan to promote Loomwood to your audience?</label>
+          <textarea id="promotion-plan" name="promotionPlan" required data-question="How do you plan to promote Loomwood to your audience?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="monthly-content">How many Loomwood-related videos, streams, or posts could you create each month?</label>
+          <input id="monthly-content" name="monthlyContent" type="text" required data-question="How many Loomwood-related videos, streams, or posts could you create each month?">
+        </div>
+        <fieldset class="field">
+          <legend class="required">Are you willing to include your Loomwood creator code/discount code in descriptions, panels, bios, or profiles?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="creatorCode" value="Yes" required data-question="Willing to include a Loomwood creator/discount code?"><span>Yes</span></label>
+            <label class="choice"><input type="radio" name="creatorCode" value="No" data-question="Willing to include a Loomwood creator/discount code?"><span>No</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend class="required">Are you comfortable engaging with the community on Discord and in-game?</legend>
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="communityEngagement" value="Yes" required data-question="Comfortable engaging with the community on Discord and in-game?"><span>Yes</span></label>
+            <label class="choice"><input type="radio" name="communityEngagement" value="No" data-question="Comfortable engaging with the community on Discord and in-game?"><span>No</span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="form-section">
+        <h2>Professionalism</h2>
+        <p class="section-note">Please answer honestly. Context matters more than a perfect history.</p>
+
+        <div class="field">
+          <label class="required" for="platform-actions">Have you ever received strikes, bans, suspensions, or content violations on any platform? If yes, please explain.</label>
+          <textarea id="platform-actions" name="platformActions" required data-question="Any strikes, bans, suspensions, or content violations?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="minecraft-bans">Have you ever been banned from a Minecraft server community? If yes, please explain.</label>
+          <textarea id="minecraft-bans" name="minecraftBans" required data-question="Have you ever been banned from a Minecraft server community?"></textarea>
+        </div>
+        <div class="field">
+          <label class="required" for="why-you">Why should Loomwood choose you as a Media Partner?</label>
+          <textarea class="long-answer" id="why-you" name="whyYou" required data-question="Why should Loomwood choose you as a Media Partner?"></textarea>
+        </div>
+        <div class="field">
+          <label for="anything-else">Is there anything else you'd like us to know?</label>
+          <textarea id="anything-else" name="anythingElse" data-question="Anything else you'd like us to know?"></textarea>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button class="submit-button" type="submit">SUBMIT APPLICATION</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="year"></span> LOOMWOOD</span>
+    <span class="footer-motto">BUILD TOGETHER. GROW TOGETHER.</span>
+  </footer>
+</body>
+</html>

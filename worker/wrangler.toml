@@ -1,0 +1,6 @@
+name = "loomwood-applications"
+main = "src/index.js"
+compatibility_date = "2026-06-13"
+
+[vars]
+ALLOWED_ORIGINS = "https://loomwood.org,https://www.loomwood.org,http://localhost:4173,http://127.0.0.1:4173"

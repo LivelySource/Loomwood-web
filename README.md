@@ -2,11 +2,24 @@
 
 A static application center and landing page for the Loomwood Minecraft server, ready for GitHub Pages. It includes Staff Application, Media Application, Voting, and Store options.
 
-## Customize
+## Application forms
 
-1. Open `script.js`.
-2. Replace each `"#"` in `destinations` with your Staff Application, Media Application, and voting URLs.
-3. The server address shown in the header is `play.loomwood.org`.
+The Staff and Media forms use a Cloudflare Worker relay so Discord webhook URLs never appear in this public repository.
+
+1. Create the Discord webhook(s) in the destination channel settings.
+2. Sign in to Cloudflare: `npx wrangler login`
+3. From the `worker` folder, add one shared webhook:
+   `npx wrangler secret put DISCORD_WEBHOOK_URL`
+4. Or use separate channels:
+   `npx wrangler secret put STAFF_WEBHOOK_URL`
+   `npx wrangler secret put MEDIA_WEBHOOK_URL`
+5. Deploy from the `worker` folder: `npx wrangler deploy`
+6. Copy the resulting `workers.dev` URL into `APPLICATION_API_URL` in `application.js`.
+7. Commit and push that endpoint change.
+
+Never place a Discord webhook URL in `application.js` or any other public website file.
+
+The server address shown in the header is `play.loomwood.org`.
 
 ## Publish on GitHub Pages
 
