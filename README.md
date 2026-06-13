@@ -1,6 +1,6 @@
 # Loomwood Website
 
-A static landing page for the Loomwood Minecraft server, ready for GitHub Pages. It includes Staff Application, Media Application, Voting, and Store options.
+A static application center and landing page for the Loomwood Minecraft server, ready for GitHub Pages. It includes Staff Application, Media Application, Voting, and Store options.
 
 ## Customize
 
