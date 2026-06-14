@@ -1,6 +1,6 @@
-// Deploy the worker in worker/ to Cloudflare and replace with your deployed URL
-// Format: https://<worker-name>.<your-username>.workers.dev
-const APPLICATION_API_URL = "https://YOUR-WORKER.workers.dev";
+// Deploy the worker in worker/ to Cloudflare and set VITE_APPLICATION_API_URL in .env.local
+// Fallback URL if environment variable is not set:
+const APPLICATION_API_URL = import.meta.env.VITE_APPLICATION_API_URL || "https://YOUR-WORKER.workers.dev";
 
 const applicationForm = document.querySelector(".application-form");
 const submitButton = applicationForm?.querySelector(".submit-button");
