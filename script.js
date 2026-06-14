@@ -1,7 +1,7 @@
 const destinations = {
   staff: "staff-applications/",
   media: "media-applications/",
-  vote: "#"
+  vote: "voting/"
 };
 
 const dialog = document.querySelector(".link-dialog");
