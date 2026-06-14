@@ -1,5 +1,7 @@
 // Worker URL - configured in Cloudflare with Discord webhook secrets
 const APPLICATION_API_URL = "https://loomwood-applications.weston-schmidt4.workers.dev";
+// Turnstile siteverify Worker URL
+const TURNSTILE_SITEVERIFY_URL = "https://turnstile-siteverify.weston-schmidt4.workers.dev";
 
 const applicationForm = document.querySelector(".application-form");
 const submitButton = applicationForm?.querySelector(".submit-button");
@@ -65,9 +67,35 @@ applicationForm?.addEventListener("submit", async (event) => {
 
   submitButton.disabled = true;
   submitButton.textContent = "SUBMITTING...";
-  setStatus("Sending your application...");
+  setStatus("Verifying and sending your application...");
 
   try {
+    // Step 1: Validate CAPTCHA token with Turnstile siteverify Worker
+    const cfToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!cfToken) {
+      setStatus("Please complete the CAPTCHA verification.", "error");
+      submitButton.disabled = false;
+      submitButton.textContent = "SUBMIT APPLICATION";
+      return;
+    }
+
+    const turnstileResponse = await fetch(TURNSTILE_SITEVERIFY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: cfToken })
+    });
+
+    const turnstileResult = await turnstileResponse.json().catch(() => ({}));
+    if (!turnstileResult.success) {
+      setStatus("CAPTCHA verification failed. Please try again.", "error");
+      // Reset CAPTCHA
+      window.turnstile?.reset?.();
+      submitButton.disabled = false;
+      submitButton.textContent = "SUBMIT APPLICATION";
+      return;
+    }
+
+    // Step 2: Submit to Discord webhook via application worker
     const response = await fetch(APPLICATION_API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -82,6 +110,7 @@ applicationForm?.addEventListener("submit", async (event) => {
     if (!response.ok) throw new Error(result.error || "Submission failed");
 
     applicationForm.reset();
+    window.turnstile?.reset?.();
     setStatus("Application submitted successfully. Thank you! Redirecting...", "success");
     
     // Redirect to home after 5 seconds
