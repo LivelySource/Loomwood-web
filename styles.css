@@ -38,6 +38,7 @@ body::before {
     linear-gradient(90deg, rgba(255, 244, 210, .07) 1px, transparent 1px);
   background-size: 5px 5px;
 }
+
 .portal-button {
   display: inline-block;
   padding: 12px 18px;
@@ -51,6 +52,13 @@ body::before {
   backdrop-filter: blur(9px);
   transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
+
+.portal-button:hover {
+  transform: translateY(-2px);
+  background: #29482d;
+  box-shadow: 3px 3px 0 #dc9f3e;
+}
+
 .scene {
   position: fixed;
   inset: 0;
