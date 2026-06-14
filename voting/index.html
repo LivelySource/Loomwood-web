@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vote for Loomwood on multiple server listing sites to help support our Minecraft community.">
+  <title>Vote for Loomwood | Minecraft Server</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .voting-hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .voting-hero h1 {
+      font-size: 48px;
+      margin: 40px 0 20px;
+      color: var(--paper);
+    }
+
+    .voting-intro {
+      font-size: 18px;
+      color: var(--cream);
+      max-width: 600px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+    }
+
+    .voting-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 0 20px 80px;
+    }
+
+    .voting-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 32px 24px;
+      background: rgba(255, 250, 240, 0.08);
+      border: 1px solid rgba(82, 122, 69, 0.3);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .voting-card:hover {
+      background: rgba(255, 250, 240, 0.15);
+      border-color: rgba(82, 122, 69, 0.6);
+      transform: translateY(-4px);
+    }
+
+    .voting-logo {
+      width: 80px;
+      height: 80px;
+      background: rgba(220, 159, 62, 0.15);
+      border: 2px dashed rgba(220, 159, 62, 0.4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: var(--cream);
+    }
+
+    .voting-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--paper);
+      margin-bottom: 8px;
+    }
+
+    .voting-description {
+      font-size: 14px;
+      color: var(--cream);
+      margin-bottom: 20px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .vote-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: var(--paper);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .vote-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(82, 122, 69, 0.3);
+    }
+
+    .vote-button:active {
+      transform: translateY(0);
+    }
+  </style>
+  <script src="../script.js" defer></script>
+</head>
+<body class="voting-page">
+  <div class="scene" aria-hidden="true">
+    <div class="scene-image"></div>
+    <div class="scene-shade"></div>
+    <div class="particles"></div>
+  </div>
+
+  <header class="site-header voting-header">
+    <a class="home-link" href="../"><span aria-hidden="true">&larr;</span> BACK TO PORTAL</a>
+    <button class="copy-ip" type="button" data-server-ip="play.loomwood.org">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="copy-label">PLAY.LOOMWOOD.ORG</span>
+      <span class="copy-hint">COPY IP</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="voting-hero">
+      <img class="hero-logo" src="../assets/loomwood-logo.png" alt="Loomwood" width="300" height="125">
+      <h1>Support Loomwood</h1>
+      <p class="voting-intro">
+        Your vote helps us grow and reach new players! Voting is quick, free, and makes a real difference for the server. 
+        Vote on as many sites as you'd like.
+      </p>
+    </section>
+
+    <section class="voting-grid">
+      <!-- Placeholder voting cards (1-10) -->
+      <div class="voting-card">
+        <div class="voting-logo">Logo 1</div>
+        <div class="voting-name">Voting Site 1</div>
+        <p class="voting-description">Support Loomwood on this listing site.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 2</div>
+        <div class="voting-name">Voting Site 2</div>
+        <p class="voting-description">Help us climb the rankings here.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 3</div>
+        <div class="voting-name">Voting Site 3</div>
+        <p class="voting-description">Cast your vote for Loomwood.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 4</div>
+        <div class="voting-name">Voting Site 4</div>
+        <p class="voting-description">Vote to support our community.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 5</div>
+        <div class="voting-name">Voting Site 5</div>
+        <p class="voting-description">One click to make an impact.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 6</div>
+        <div class="voting-name">Voting Site 6</div>
+        <p class="voting-description">Help Loomwood shine here.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 7</div>
+        <div class="voting-name">Voting Site 7</div>
+        <p class="voting-description">Your support matters to us.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 8</div>
+        <div class="voting-name">Voting Site 8</div>
+        <p class="voting-description">Vote to help us grow.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 9</div>
+        <div class="voting-name">Voting Site 9</div>
+        <p class="voting-description">Support Loomwood today.</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="voting-card">
+        <div class="voting-logo">Logo 10</div>
+        <div class="voting-name">Voting Site 10</div>
+        <p class="voting-description">Every vote counts!</p>
+        <a class="vote-button" href="#" target="_blank" rel="noopener noreferrer">
+          VOTE NOW <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="year"></span> LOOMWOOD</span>
+    <span class="footer-motto">BUILD TOGETHER. GROW TOGETHER.</span>
+  </footer>
+</body>
+</html>
