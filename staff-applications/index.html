@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../application.css">
   <script src="../script.js" defer></script>
   <script src="../application.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="application-page">
   <div class="scene" aria-hidden="true">
@@ -141,6 +142,7 @@
       </section>
 
       <div class="form-actions">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADkNbauBkO427udb" data-action="turnstile-spin-v1"></div>
         <button class="submit-button" type="submit">SUBMIT APPLICATION</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </div>
