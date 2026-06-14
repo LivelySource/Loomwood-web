@@ -82,7 +82,12 @@ applicationForm?.addEventListener("submit", async (event) => {
     if (!response.ok) throw new Error(result.error || "Submission failed");
 
     applicationForm.reset();
-    setStatus("Application submitted successfully. Thank you!", "success");
+    setStatus("Application submitted successfully. Thank you! Redirecting...", "success");
+    
+    // Redirect to home after 5 seconds
+    setTimeout(() => {
+      window.location.href = "../";
+    }, 5000);
   } catch (error) {
     setStatus(error.message || "Could not submit. Please try again.", "error");
   } finally {
