@@ -4,3 +4,14 @@ compatibility_date = "2026-06-13"
 
 [vars]
 ALLOWED_ORIGINS = "https://loomwood.org,https://www.loomwood.org,http://localhost:4173,http://127.0.0.1:4173"
+
+# Discord Webhook URLs for application submissions
+# Get these from Discord: Server Settings → Integrations → Webhooks → Create Webhook
+# Staff applications webhook (or use DISCORD_WEBHOOK_URL as fallback)
+# STAFF_WEBHOOK_URL = "https://discord.com/api/webhooks/YOUR_STAFF_WEBHOOK_ID/YOUR_STAFF_WEBHOOK_TOKEN"
+
+# Media applications webhook (or use DISCORD_WEBHOOK_URL as fallback)
+# MEDIA_WEBHOOK_URL = "https://discord.com/api/webhooks/YOUR_MEDIA_WEBHOOK_ID/YOUR_MEDIA_WEBHOOK_TOKEN"
+
+# Optional: Single webhook for all applications (fallback if specific webhooks aren't set)
+# DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"

@@ -1,5 +1,5 @@
-// Set this after deploying the secure relay in worker/.
-const APPLICATION_API_URL = "https://YOUR-WORKER.workers.dev";
+// Worker URL - configured in Cloudflare with Discord webhook secrets
+const APPLICATION_API_URL = "https://loomwood-applications.weston-schmidt4.workers.dev";
 
 const applicationForm = document.querySelector(".application-form");
 const submitButton = applicationForm?.querySelector(".submit-button");
